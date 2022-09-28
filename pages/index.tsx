@@ -142,6 +142,7 @@ const Home: NextPage = () => {
           <ListWrapper>
             <List>개인 프로젝트</List>
             <List>개발기간: 2022.07</List>
+            <List>사용 기술 스택</List>
             <ListWrapper>
               <List>React</List>
               <List>TypeScript</List>
@@ -153,6 +154,7 @@ const Home: NextPage = () => {
           <ListWrapper>
             <List>개인 프로젝트</List>
             <List>개발기간: 2022.09 ~ 작업중</List>
+            <List>사용 기술 스택</List>
             <ListWrapper>
               <List>React</List>
               <List>TypeScript</List>
