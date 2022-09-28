@@ -128,7 +128,7 @@ const Home: NextPage = () => {
               <List>JavaScript</List>
               <List>React</List>
             </ListWrapper>
-            <List>React Native 기반의 TiOS PAY -> AP First로의 전반적인 리뉴얼된 화면 개발 작업을 하였습니다.</List>
+            <List>{`React Native 기반의 TiOS PAY -> AP First로의 전반적인 리뉴얼된 화면 개발 작업을 하였습니다.`}</List>
             <List>선물하기 관련 기능, 화면들을 중점적으로 개발했습니다</List>
             <List><Link href='https://play.google.com/store/apps/details?id=com.keepercustomerapp&hl=ko&gl=US' target='_blank'>LINK</Link></List>
           </ListWrapper>
