@@ -78,6 +78,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Frontend Dev. JY</title>
         <meta name="description" content="프론트엔드 개발자 김재영" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"></link>
       </Head>
       <InnerWrapper>
         <ContentWrapper>
