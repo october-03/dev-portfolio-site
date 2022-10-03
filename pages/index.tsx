@@ -101,6 +101,15 @@ const Home: NextPage = () => {
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
+          <Title>LINK</Title>
+          <ListWrapper>
+            <List><Link href='https://github.com/october-03' target={'_blank'}>GITHUB</Link></List>
+            <List><Link href='https://www.rocketpunch.com/@autumnoctoberbus' target={'_blank'}>ROCKETPUNCH</Link></List>
+            <List><Link href='https://velog.io/@october03' target={'_blank'}>BLOG</Link></List>
+            <List><Link href='https://www.linkedin.com/in/jae-young-kim-761408220/' target={'_blank'}>LINKEDIN</Link></List>
+          </ListWrapper>
+        </ContentWrapper>
+        <ContentWrapper>
           <Title>기술스택</Title>
           <ListWrapper>
             <List>TypeScript</List>
@@ -166,14 +175,30 @@ const Home: NextPage = () => {
             </ListWrapper>
             <List>{`현재 작업중에 있으며 Node.js, Express, MongoDB를 기반으로 한 API는 개발이 완료되었습니다.`}</List>
           </ListWrapper>
-        </ContentWrapper>
-        <ContentWrapper>
-          <Title>LINK</Title>
+          <SubTitle>mts 앱 제작 (앱 이름 미정)</SubTitle>
           <ListWrapper>
-            <List><Link href='https://github.com/october-03' target={'_blank'}>GITHUB</Link></List>
-            <List><Link href='https://www.rocketpunch.com/@autumnoctoberbus' target={'_blank'}>ROCKETPUNCH</Link></List>
-            <List><Link href='https://velog.io/@october03' target={'_blank'}>BLOG</Link></List>
-            <List><Link href='https://www.linkedin.com/in/jae-young-kim-761408220/' target={'_blank'}>LINKEDIN</Link></List>
+            <List>회사 프로젝트</List>
+            <List>개발기간: 2022.04 ~ 작업중</List>
+            <List>사용 기술 스택</List>
+            <ListWrapper>
+              <List>React Native</List>
+              <List>TypeScript</List>
+            </ListWrapper>
+            <List>{`React Native 기반의 코인 트레이딩 봇 관리 앱을 제작하고 있습니다.`}</List>
+            <List>전반적인 화면개발 작업과 봇 관련 기능 개발 작업을 했습니다.</List>
+          </ListWrapper>
+          <SubTitle>거래 관련 앱 제작 (앱 이름 미정)</SubTitle>
+          <ListWrapper>
+            <List>회사 프로젝트</List>
+            <List>개발기간: 2022.04 ~ 작업중</List>
+            <List>사용 기술 스택</List>
+            <ListWrapper>
+              <List>React Native</List>
+              <List>React</List>
+              <List>TypeScript</List>
+            </ListWrapper>
+            <List>{`React Native 기반의 거래소 앱을 제작하고 있습니다.`}</List>
+            <List>전반적인 화면개발 작업과 경매 기능 개발, 회원 정보 관련 기능 개발작업을 했습니다.</List>
           </ListWrapper>
         </ContentWrapper>
       </InnerWrapper>
