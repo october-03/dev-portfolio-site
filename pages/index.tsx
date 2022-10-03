@@ -183,9 +183,11 @@ const Home: NextPage = () => {
             <ListWrapper>
               <List>React Native</List>
               <List>TypeScript</List>
+              <List>Jest</List>
             </ListWrapper>
             <List>{`React Native 기반의 코인 트레이딩 봇 관리 앱을 제작하고 있습니다.`}</List>
             <List>전반적인 화면개발 작업과 봇 관련 기능 개발 작업을 했습니다.</List>
+            <List>기능단위 TDD를 최초로 적용한 앱 입니다.</List>
           </ListWrapper>
           <SubTitle>거래 관련 앱 제작 (앱 이름 미정)</SubTitle>
           <ListWrapper>
@@ -196,6 +198,7 @@ const Home: NextPage = () => {
               <List>React Native</List>
               <List>React</List>
               <List>TypeScript</List>
+              <List>Jest</List>
             </ListWrapper>
             <List>{`React Native 기반의 거래소 앱을 제작하고 있습니다.`}</List>
             <List>전반적인 화면개발 작업과 경매 기능 개발, 회원 정보 관련 기능 개발작업을 했습니다.</List>
