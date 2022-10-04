@@ -6,13 +6,13 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 20px 0px;
+  padding: 20px 0;
 `
 
 const InnerWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0px 20px;
+  padding: 0 20px;
   width: 800px;
   @media screen and (max-width: 800px) {
     width: 100%;
@@ -72,6 +72,44 @@ const List = styled.li`
   word-break: keep-all;
 `
 
+const LinkData = [
+  {
+    title: 'GITHUB',
+    url: 'https://github.com/october-03'
+  },
+  {
+    title: 'ROCKETPUNCH',
+    url: 'https://www.rocketpunch.com/@autumnoctoberbus'
+  },
+  {
+    title: 'BLOG',
+    url: 'https://velog.io/@october03'
+  },
+  {
+    title: 'LINKEDIN',
+    url: 'https://www.linkedin.com/in/jae-young-kim-761408220/'
+  }
+]
+
+const TechStackData = {
+  usable: [
+    'TypeScript',
+    'ES6',
+    'React',
+    'React Hooks',
+    'Redux',
+    'Next.js',
+    'React Native'
+  ],
+  interested: [
+    'TDD',
+    'SSR',
+    'Webpack',
+    'Babel',
+    'Yarn Berry',
+    'pnpm'
+  ]
+}
 const Home: NextPage = () => {
   return (
     <Wrapper>
@@ -101,34 +139,32 @@ const Home: NextPage = () => {
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
-          <Title>LINK</Title>
+          <SubTitle>LINK</SubTitle>
           <ListWrapper>
-            <List><Link href='https://github.com/october-03' target={'_blank'}>GITHUB</Link></List>
-            <List><Link href='https://www.rocketpunch.com/@autumnoctoberbus' target={'_blank'}>ROCKETPUNCH</Link></List>
-            <List><Link href='https://velog.io/@october03' target={'_blank'}>BLOG</Link></List>
-            <List><Link href='https://www.linkedin.com/in/jae-young-kim-761408220/' target={'_blank'}>LINKEDIN</Link></List>
+            {LinkData.map((data, index) => {
+                return (
+                    <List key={index}><Link href={data.url} target={'_blank'}>{data.title}</Link></List>
+                )
+            })}
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
           <Title>기술스택</Title>
           <ListWrapper>
-            <List>TypeScript</List>
-            <List>ES6</List>
-            <List>React</List>
-            <List>React Hooks</List>
-            <List>Redux</List>
-            <List>Next.js</List>
-            <List>React Native</List>
+            {/*<List>TypeScript</List>*/}
+            {/*<List>ES6</List>*/}
+            {/*<List>React</List>*/}
+            {/*<List>React Hooks</List>*/}
+            {/*<List>Redux</List>*/}
+            {/*<List>Next.js</List>*/}
+            {/*<List>React Native</List>*/}
+            {TechStackData.usable.map((data, index)=>{return <List key={index}>{data}</List>})}
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
           <Title>관심있는, 공부중인 기술</Title>
           <ListWrapper>
-            <List>TDD</List>
-            <List>SSR</List>
-            <List>Webpack</List>
-            <List>Babel</List>
-            <List>Zero Install</List>
+            {TechStackData.interested.map((data, index)=>{return <List key={index}>{data}</List>})}
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
