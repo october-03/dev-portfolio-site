@@ -110,6 +110,61 @@ const TechStackData = {
     'pnpm'
   ]
 }
+
+const ProjectData:ProjectDataType[] = [
+  {
+    title: 'TiOS PAY 앱 리뉴얼',
+    list: {
+      content: ['회사 프로젝트',
+      '개발기간: 2022.03 ~ 2022.05',
+      'React Native 기반의 TiOS PAY -> AP First로의 전반적인 리뉴얼된 화면 개발 작업을 하였습니다.',
+      '선물하기 관련 기능, 화면들을 중점적으로 개발했습니다'],
+      techStack: ['React Native', 'Redux', 'JavaScript', 'React']
+    },
+    link: 'https://play.google.com/store/apps/details?id=com.keepercustomerapp&hl=ko&gl=US',
+  },
+  {
+    title: 'SOOSIM 17.5 개발',
+    list: {
+      content: ['개인 프로젝트',
+        '개발기간: 2022.07',
+        '한양사이버대학교 디자인학부 졸업전시회 17.5회 수심 사이트 개발을 하였습니다',],
+      techStack: ['React', 'TypeScript'],
+    },
+    link: 'https://portal.hanyangcyber.ac.kr/Popup/GrdExhibition/17_5th/index.html'
+  },
+  {
+    title: '롤 전적검색 및 팀 매칭 사이트 개발',
+    list: {
+      content: ['개인 프로젝트',
+      '개발기간: 2022.09 ~ 작업중',
+      '현재 작업중에 있으며 Node.js, Express, MongoDB를 기반으로 한 API는 개발이 완료되었습니다.'],
+      techStack: ['React', 'TypeScript', 'Next.js', 'Node.js', 'Express', 'MongoDB']
+    },
+  },
+  {
+    title: 'mts 앱 제작 (앱 이름 미정)',
+    list: {
+      content: ['회사 프로젝트',
+        '개발기간: 2022.04 ~ 작업중',
+        'React Native 기반의 코인 트레이딩 봇 관리 앱을 제작하고 있습니다.',
+        '전반적인 화면개발 작업과 봇 관련 기능 개발 작업을 했습니다.',
+        '기능단위 TDD를 최초로 적용한 앱 입니다.'],
+      techStack: ['React Native', 'Redux', 'TypeSciprt', 'Jest']
+    },
+  },
+  {
+    title: '거래 관련 앱 제작 (앱 이름 미정)',
+    list: {
+      content: ['회사 프로젝트',
+      '개발기간: 2022.04 ~ 작업중',
+      'React Native 기반의 거래소 앱을 제작하고 있습니다.',
+      '전반적인 화면개발 작업과 경매 기능 개발, 회원 정보 관련 기능 개발작업을 했습니다.'],
+      techStack: ['React Native', 'React', 'TypeScript', 'Jest']
+    }
+  }
+]
+
 const Home: NextPage = () => {
   return (
     <Wrapper>
@@ -151,13 +206,6 @@ const Home: NextPage = () => {
         <ContentWrapper>
           <Title>기술스택</Title>
           <ListWrapper>
-            {/*<List>TypeScript</List>*/}
-            {/*<List>ES6</List>*/}
-            {/*<List>React</List>*/}
-            {/*<List>React Hooks</List>*/}
-            {/*<List>Redux</List>*/}
-            {/*<List>Next.js</List>*/}
-            {/*<List>React Native</List>*/}
             {TechStackData.usable.map((data, index)=>{return <List key={index}>{data}</List>})}
           </ListWrapper>
         </ContentWrapper>
@@ -168,81 +216,43 @@ const Home: NextPage = () => {
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
-          <Title>프로젝트</Title>
-          <SubTitle>TiOS PAY 앱 리뉴얼</SubTitle>
-          <ListWrapper>
-            <List>회사 프로젝트</List>
-            <List>개발기간: 2022.03 ~ 2022.05</List>
-            <List>사용 기술 스택</List>
-            <ListWrapper>
-              <List>React Native</List>
-              <List>Redux</List>
-              <List>JavaScript</List>
-              <List>React</List>
-            </ListWrapper>
-            <List>{`React Native 기반의 TiOS PAY -> AP First로의 전반적인 리뉴얼된 화면 개발 작업을 하였습니다.`}</List>
-            <List>선물하기 관련 기능, 화면들을 중점적으로 개발했습니다</List>
-            <List><Link href='https://play.google.com/store/apps/details?id=com.keepercustomerapp&hl=ko&gl=US' target='_blank'>LINK</Link></List>
-          </ListWrapper>
-          <SubTitle>SOOSIM 17.5 개발</SubTitle>
-          <ListWrapper>
-            <List>개인 프로젝트</List>
-            <List>개발기간: 2022.07</List>
-            <List>사용 기술 스택</List>
-            <ListWrapper>
-              <List>React</List>
-              <List>TypeScript</List>
-            </ListWrapper>
-            <List>{`한양사이버대학교 디자인학부 졸업전시회 17.5회 수심 사이트 개발을 하였습니다`}</List>
-            <List><Link href='https://portal.hanyangcyber.ac.kr/Popup/GrdExhibition/17_5th/index.html' target='_blank'>LINK</Link></List>
-          </ListWrapper>
-          <SubTitle>롤 전적검색 및 팀 매칭 사이트 개발</SubTitle>
-          <ListWrapper>
-            <List>개인 프로젝트</List>
-            <List>개발기간: 2022.09 ~ 작업중</List>
-            <List>사용 기술 스택</List>
-            <ListWrapper>
-              <List>React</List>
-              <List>TypeScript</List>
-              <List>Next.js</List>
-              <List>Node.js</List>
-              <List>Express</List>
-              <List>MongoDB</List>
-            </ListWrapper>
-            <List>{`현재 작업중에 있으며 Node.js, Express, MongoDB를 기반으로 한 API는 개발이 완료되었습니다.`}</List>
-          </ListWrapper>
-          <SubTitle>mts 앱 제작 (앱 이름 미정)</SubTitle>
-          <ListWrapper>
-            <List>회사 프로젝트</List>
-            <List>개발기간: 2022.04 ~ 작업중</List>
-            <List>사용 기술 스택</List>
-            <ListWrapper>
-              <List>React Native</List>
-              <List>TypeScript</List>
-              <List>Jest</List>
-            </ListWrapper>
-            <List>{`React Native 기반의 코인 트레이딩 봇 관리 앱을 제작하고 있습니다.`}</List>
-            <List>전반적인 화면개발 작업과 봇 관련 기능 개발 작업을 했습니다.</List>
-            <List>기능단위 TDD를 최초로 적용한 앱 입니다.</List>
-          </ListWrapper>
-          <SubTitle>거래 관련 앱 제작 (앱 이름 미정)</SubTitle>
-          <ListWrapper>
-            <List>회사 프로젝트</List>
-            <List>개발기간: 2022.04 ~ 작업중</List>
-            <List>사용 기술 스택</List>
-            <ListWrapper>
-              <List>React Native</List>
-              <List>React</List>
-              <List>TypeScript</List>
-              <List>Jest</List>
-            </ListWrapper>
-            <List>{`React Native 기반의 거래소 앱을 제작하고 있습니다.`}</List>
-            <List>전반적인 화면개발 작업과 경매 기능 개발, 회원 정보 관련 기능 개발작업을 했습니다.</List>
-          </ListWrapper>
+          {ProjectData.map((data, index)=>{
+            return (
+                <div key={index}>
+                  <SubTitle>{data.title}</SubTitle>
+                  <ListWrapper>
+                    {data.list.content.map((content, index)=>{
+                      return (
+                          <List key={index}>{content}</List>
+                      )
+                    })}
+                    <List>사용 기술 스택</List>
+                    <ListWrapper>
+                      {data.list.techStack.map((techStack, index)=>{
+                        return (
+                            <List key={index}>{techStack}</List>
+                        )
+                      })}
+                    </ListWrapper>
+                    <List><Link href={data.link} target='_blank'>LINK</Link></List>
+                  </ListWrapper>
+                </div>
+            )})}
         </ContentWrapper>
       </InnerWrapper>
     </Wrapper>
   )
+}
+
+type ProjectDataType = {
+  title: string,
+  list: listType,
+  link?: string,
+}
+
+type listType = {
+  content: string[],
+  techStack: string[],
 }
 
 export default Home
