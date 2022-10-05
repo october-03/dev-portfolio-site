@@ -169,6 +169,8 @@ const ProjectData:ProjectDataType[] = [
   }
 ]
 
+const Email = 'season_autumn@kakao.com'
+
 const Home: NextPage = () => {
   return (
     <Wrapper>
@@ -194,7 +196,7 @@ const Home: NextPage = () => {
         <ContentWrapper>
           <SubTitle>연락처</SubTitle>
           <ListWrapper>
-            <List><Link href='mailto:season_autumn@kakao.com' target={'_blank'}>season_autumn@kakao.com</Link></List>
+            <List><Link href={`mailto:${Email}`} target={'_blank'}>{Email}</Link></List>
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
