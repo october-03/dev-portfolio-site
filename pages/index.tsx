@@ -19,6 +19,10 @@ const InnerWrapper = styled.div`
   }
 `
 
+const ProjectWrapper = styled.div`
+  margin-bottom: 20px;
+`
+
 const ContentWrapper = styled.div`
   margin-bottom: 1rem;
 `
@@ -218,7 +222,7 @@ const Home: NextPage = () => {
         <ContentWrapper>
           {ProjectData.map((data, index)=>{
             return (
-                <div key={index}>
+                <ProjectWrapper key={index}>
                   <SubTitle>{data.title}</SubTitle>
                   <ListWrapper>
                     {data.list.content.map((content, index)=>{
@@ -236,7 +240,7 @@ const Home: NextPage = () => {
                     </ListWrapper>
                     {data.link && <List><Link href={data.link} target='_blank'>LINK</Link></List>}
                   </ListWrapper>
-                </div>
+                </ProjectWrapper>
             )})}
         </ContentWrapper>
       </InnerWrapper>
