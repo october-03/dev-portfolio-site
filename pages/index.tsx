@@ -234,7 +234,7 @@ const Home: NextPage = () => {
                         )
                       })}
                     </ListWrapper>
-                    <List><Link href={data.link} target='_blank'>LINK</Link></List>
+                    {data.link && <List><Link href={data.link} target='_blank'>LINK</Link></List>}
                   </ListWrapper>
                 </div>
             )})}
