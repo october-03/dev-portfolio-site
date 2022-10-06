@@ -1,12 +1,12 @@
-##INTRODUCE
+## INTRODUCE
 
 개인 포트폴리오 사이트 소스코드입니다.
 
-##URL
+## URL
 
 https://october03.dev
 
-##TECH STACK
+## TECH STACK
 
 - Next.js
 - TypeScript
