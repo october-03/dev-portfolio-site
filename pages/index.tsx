@@ -53,6 +53,11 @@ const Text = styled.span`
   font-weight: 400;
 `;
 
+const PeriodText = styled.span`
+  font-size: 0.8rem;
+  margin-top: 0.8rem;
+`;
+
 const ListWrapper = styled.ul``;
 
 const Link = styled.a`
@@ -76,7 +81,7 @@ const List = styled.li`
   word-break: keep-all;
 `;
 
-const LinkData = [
+const LinkData: linkDataType[] = [
   {
     title: "GITHUB",
     url: "https://github.com/october-03",
@@ -95,7 +100,7 @@ const LinkData = [
   },
 ];
 
-const TechStackData = {
+const TechStackData: techStackDataType = {
   usable: [
     "TypeScript",
     "ES6",
@@ -108,7 +113,7 @@ const TechStackData = {
   interested: ["TDD", "SSR", "Webpack", "Babel", "Yarn Berry", "pnpm"],
 };
 
-const ProjectData: ProjectDataType[] = [
+const ProjectData: projectDataType[] = [
   {
     title: "TiOS PAY 앱 리뉴얼",
     list: {
@@ -162,7 +167,7 @@ const ProjectData: ProjectDataType[] = [
         "전반적인 화면개발 작업과 봇 관련 기능 개발 작업을 했습니다.",
         "기능단위 TDD를 최초로 적용한 앱 입니다.",
       ],
-      techStack: ["React Native", "Redux", "TypeSciprt", "Jest"],
+      techStack: ["React Native", "Redux", "TypeScript", "Jest"],
     },
   },
   {
@@ -179,6 +184,32 @@ const ProjectData: ProjectDataType[] = [
   },
 ];
 
+const WorkExperienceData: workExperienceType[] = [
+  {
+    companyName: "Diffense",
+    period: "2021.09 ~ 2021.10",
+    list: ["웹디자인, 웹퍼블리싱 인턴"],
+  },
+  {
+    companyName: "BLOCKWARE",
+    period: "2021.12 ~ 재직중",
+    list: ["프론트엔드"],
+  },
+];
+
+const EducationData: educationType[] = [
+  {
+    schoolName: "한세사이버보안고등학교",
+    period: "2020.04 ~ 2022.02",
+    list: ["U센서 네트워크보안과"],
+  },
+  {
+    schoolName: "한양사이버대학교",
+    period: "2022.03 ~ 재학중",
+    list: ["뉴미디어디자인학과"],
+  },
+];
+
 const Email = "season_autumn@kakao.com";
 
 const Home: NextPage = () => {
@@ -191,7 +222,7 @@ const Home: NextPage = () => {
           rel="stylesheet"
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"
-        ></link>
+        />
       </Head>
       <InnerWrapper>
         <ContentWrapper>
@@ -208,7 +239,7 @@ const Home: NextPage = () => {
           </HelloTextWrapper>
         </ContentWrapper>
         <ContentWrapper>
-          <SubTitle>연락처</SubTitle>
+          <SubTitle>CONTACT</SubTitle>
           <ListWrapper>
             <List>
               <Link href={`mailto:${Email}`} target={"_blank"}>
@@ -232,7 +263,7 @@ const Home: NextPage = () => {
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
-          <Title>기술스택</Title>
+          <Title>TECH STACK</Title>
           <ListWrapper>
             {TechStackData.usable.map((data, index) => {
               return <List key={index}>{data}</List>;
@@ -240,7 +271,7 @@ const Home: NextPage = () => {
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
-          <Title>관심있는, 공부중인 기술</Title>
+          <Title>INTERESTED TECH</Title>
           <ListWrapper>
             {TechStackData.interested.map((data, index) => {
               return <List key={index}>{data}</List>;
@@ -248,6 +279,43 @@ const Home: NextPage = () => {
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
+          <Title>WORK EXPERIENCE</Title>
+          {WorkExperienceData.map((data, index) => {
+            return (
+              <div key={index}>
+                <SubTitle>{data.companyName}</SubTitle>
+                <PeriodText>재직기간: {data.period}</PeriodText>
+                {data.list && (
+                  <ListWrapper>
+                    {data.list.map((list, index) => {
+                      return <List key={index}>{list}</List>;
+                    })}
+                  </ListWrapper>
+                )}
+              </div>
+            );
+          })}
+        </ContentWrapper>
+        <ContentWrapper>
+          <Title>EDUCATION</Title>
+          {EducationData.map((data, index) => {
+            return (
+              <div key={index}>
+                <SubTitle>{data.schoolName}</SubTitle>
+                <PeriodText>재학기간: {data.period}</PeriodText>
+                {data.list && (
+                  <ListWrapper>
+                    {data.list.map((list, index) => {
+                      return <List key={index}>{list}</List>;
+                    })}
+                  </ListWrapper>
+                )}
+              </div>
+            );
+          })}
+        </ContentWrapper>
+        <ContentWrapper>
+          <Title>PROJECT</Title>
           {ProjectData.map((data, index) => {
             return (
               <ProjectWrapper key={index}>
@@ -279,7 +347,7 @@ const Home: NextPage = () => {
   );
 };
 
-type ProjectDataType = {
+type projectDataType = {
   title: string;
   list: listType;
   link?: string;
@@ -288,6 +356,28 @@ type ProjectDataType = {
 type listType = {
   content: string[];
   techStack: string[];
+};
+
+type linkDataType = {
+  title: string;
+  url: string;
+};
+
+type techStackDataType = {
+  usable: string[];
+  interested: string[];
+};
+
+type workExperienceType = {
+  companyName: string;
+  period: string;
+  list?: string[];
+};
+
+type educationType = {
+  schoolName: string;
+  period: string;
+  list?: string[];
 };
 
 export default Home;
