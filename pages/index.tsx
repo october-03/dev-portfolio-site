@@ -91,42 +91,6 @@ const Home: NextPage = () => {
           </ListWrapper>
         </ContentWrapper>
         <ContentWrapper>
-          <Title>WORK EXPERIENCE</Title>
-          {WorkExperienceData.map((data, index) => {
-            return (
-              <div key={index}>
-                <SubTitle>{data.companyName}</SubTitle>
-                <PeriodText>재직기간: {data.period}</PeriodText>
-                {data.list && (
-                  <ListWrapper>
-                    {data.list.map((list, index) => {
-                      return <List key={index}>{list}</List>;
-                    })}
-                  </ListWrapper>
-                )}
-              </div>
-            );
-          })}
-        </ContentWrapper>
-        <ContentWrapper>
-          <Title>EDUCATION</Title>
-          {EducationData.map((data, index) => {
-            return (
-              <div key={index}>
-                <SubTitle>{data.schoolName}</SubTitle>
-                <PeriodText>재학기간: {data.period}</PeriodText>
-                {data.list && (
-                  <ListWrapper>
-                    {data.list.map((list, index) => {
-                      return <List key={index}>{list}</List>;
-                    })}
-                  </ListWrapper>
-                )}
-              </div>
-            );
-          })}
-        </ContentWrapper>
-        <ContentWrapper>
           <Title>PROJECT</Title>
           {ProjectData.map((data, index) => {
             return (
