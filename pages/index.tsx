@@ -23,6 +23,7 @@ import {
   ProjectData,
   Email,
 } from "../data";
+import { GA_TRACKING_ID } from '../lib/gtag'
 
 const Home: NextPage = () => {
   return (
@@ -34,6 +35,23 @@ const Home: NextPage = () => {
           rel="stylesheet"
           type="text/css"
           href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"
+        />
+        <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
         />
       </Head>
       <InnerWrapper>
