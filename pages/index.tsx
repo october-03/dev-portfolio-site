@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import ReactGA from "react-ga";
 import {
   Wrapper,
   ContentWrapper,
@@ -23,9 +24,25 @@ import {
   ProjectData,
   Email,
 } from "../data";
-import { GA_TRACKING_ID } from '../lib/gtag'
+import { GA_TRACKING_ID } from "../lib/gtag";
+
+ReactGA.event({
+  category: "User",
+  action: "Created an Account",
+});
+ReactGA.exception({
+  description: "An error ocurred",
+  fatal: true,
+});
 
 const Home: NextPage = () => {
+  const reportGAEvent = (title: string) => {
+    ReactGA.event({
+      category: "Button",
+      action: `Clicked ${title}`,
+      label: "URL",
+    });
+  };
   return (
     <Wrapper>
       <Head>
@@ -37,12 +54,12 @@ const Home: NextPage = () => {
           href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css"
         />
         <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -51,7 +68,7 @@ const Home: NextPage = () => {
               page_path: window.location.pathname,
             });
           `,
-            }}
+          }}
         />
       </Head>
       <InnerWrapper>
@@ -84,7 +101,13 @@ const Home: NextPage = () => {
             {LinkData.map((data, index) => {
               return (
                 <List key={index}>
-                  <Link href={data.url} target={"_blank"}>
+                  <Link
+                    href={data.url}
+                    target={"_blank"}
+                    onClick={() => {
+                      reportGAEvent(data.title);
+                    }}
+                  >
                     {data.title}
                   </Link>
                 </List>
