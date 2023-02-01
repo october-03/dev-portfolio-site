@@ -70,16 +70,9 @@ const ProjectData: projectDataType[] = [
       content: [
         "개인 프로젝트",
         "개발기간: 2022.09 ~ 작업중",
-        "현재 작업중에 있으며 Node.js, Express, MongoDB를 기반으로 한 API는 개발이 완료되었습니다.",
+        "현재 작업중에 있으며 Nest.js, postgreSQL을 기반으로 한 API는 개발이 완료되었습니다.",
       ],
-      techStack: [
-        "React",
-        "TypeScript",
-        "Next.js",
-        "Node.js",
-        "Express",
-        "MongoDB",
-      ],
+      techStack: ["React", "TypeScript", "Next.js", "Nest.js", "postgreSQL"],
     },
   },
   {
